@@ -10,12 +10,12 @@ from app.serverlibrary import mergesort, EvaluateExpression, get_smallest_three
 
 @application.route('/')
 @application.route('/index')
-@login_required
+# @login_required
 def index():
 	return render_template('index.html', title='Home')
 
 @application.route('/users')
-@login_required
+# @login_required
 def users():
 	users = User.query.all()	
 	mergesort(users, lambda item: item.username)
@@ -102,6 +102,7 @@ def halloffame():
 
 @application.route('/login', methods=['GET', 'POST'])
 def login():
+	print('print',url_for('login'))
 	if current_user.is_authenticated:
 		return redirect(url_for('index'))
 
