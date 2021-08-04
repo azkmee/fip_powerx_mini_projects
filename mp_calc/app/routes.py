@@ -69,7 +69,9 @@ def challenges():
 		record.challenge_id = int(form.challenge_id.data)
 		record.user_id = current_user.id
 		answer = form.answer.data
+		print("Input: ", answer, type(answer))
 		challenge = Challenge.query.filter_by(id=form.challenge_id.data).first()
+		print("Answer: ", challenge.question.answer, type(challenge.question.answer))
 		if int(answer) == int(challenge.question.answer):
 			db.session.add(record)
 			db.session.commit()
