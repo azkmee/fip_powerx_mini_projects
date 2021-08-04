@@ -8,14 +8,14 @@ def merge(array, p, q, r, byfunc):
         # append to temp_arr
         # remove from left\right arr
         if byfunc == None:
-            if (left_arr[0] < right_arr[0]):
+            if (left_arr[0] <= right_arr[0]):
                 temp_arr += [left_arr[0]]
                 left_arr = left_arr[1:]
             else:
                 temp_arr += [right_arr[0]]
                 right_arr = right_arr[1:]
         else:
-            if (byfunc(left_arr[0]) < byfunc(right_arr[0])):
+            if (byfunc(left_arr[0]) <= byfunc(right_arr[0])):
                 temp_arr += [left_arr[0]]
                 left_arr = left_arr[1:]
             else:
