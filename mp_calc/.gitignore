@@ -1,0 +1,10 @@
+*.pyc
+*.pyo
+
+**/__target__
+/__pycache__
+/vir-env
+/virtenv
+
+/migrations
+app.db
