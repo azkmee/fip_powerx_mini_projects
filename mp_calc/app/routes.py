@@ -104,6 +104,7 @@ def halloffame():
 
 @application.route('/login', methods=['GET', 'POST'])
 def login():
+	print('print',url_for('login'))
 	if current_user.is_authenticated:
 		return redirect(url_for('index'))
 
